@@ -15,7 +15,3 @@ Hello! I'm Andrew, a passionate instructional designer with a keen interest in c
 - [Tracery](./Tracery%20to%20HTML%20Template.html)
 
 Thank you for visiting my portfolio. If you have any questions or would like to collaborate, please don't hesitate to reach out!
-
----
-
-*Note: The links above are placeholders. Replace `#` with the actual URLs of your projects.*
