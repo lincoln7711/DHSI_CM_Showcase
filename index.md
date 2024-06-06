@@ -1,5 +1,3 @@
-<link rel="stylesheet" type="text/css" href="css/style.css">
-
 # Critical Making Projects
 
 ## Welcome to My Example Coursework 
