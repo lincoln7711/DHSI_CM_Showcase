@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tracery Example for DHSI 2024</title>
+    <meta charset="UTF-8">
+    <meta name="Example" content="Example work">
+	<meta name="keywords" content="Enter a comma separated list of keywords for search engines to find your work.">
+	<meta name="author" content="Andrew L. Smith">
+<!--
+Tracery to HTML Template
+
+Copyright 2023 Leonardo Flores
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<!-- 
+This work was completed by Andrew L. Smith as part of a course at 2024's DHSI workshop on critical making.
+-->
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }
+    
+    #title-container {
+        width: 100%;
+        text-align: center;
+        max-height: 300px;
+		font-size: 4em;
+    }
+    
+    @media (max-width: 600px) {
+        #title-container {
+            max-height: 200px;
+        }
+        
+        #text-container {
+            width: 100%;
+        }
+    }
+    
+    #text-container {
+        text-align: center;
+        font-size: 2.5em;
+        margin: auto; /* Center horizontally and vertically */
+        border: 0px solid black; /* Change 0px to your desired border thickness, if desired */
+        padding: 10px;
+        width: 400px;
+    }
+
+    /* CSS for buttons and modal */
+    #button-container {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+    }
+    
+    .button {
+        margin: 10px;
+        font-size: 2em;
+    }
+	
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    .modal-content {
+        background-color: #899;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #899;
+        width: 80%; /* Could be more or less, depending on screen size */
+        font-size: 2.5em;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+</style>
+    </head>
+    <body>
+		<div id="title-container">Title</div>
+
+        <div id="text-container"></div>
+
+        <div id="button-container">
+            <button class="button" onclick="displayAbout()">About</button>
+            <button class="button" onclick="displayString()">Regenerate</button>
+        </div>
+
+        <div id="myModal" class="modal">
+            <!-- Replace the statement below with your own artistic statement. -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>This template offers a rudimentary structure for users to either copy-paste their Tracery code or modify and add to the provided code. This doesn't include the escape codes so I'm honestly not sure how you'd insert a hashtag, for instance.</p><p>I created this as a way to port my CBDQ bots to HTML, and am sharing it with the community in the same generous spirit that Kate Compton and V. Buckenham had when creating and sharing Tracery and Cheap Bots Done Quick!</p><p>The page is more or less responsive (it should look decent on a phone). It reloads automatically every 30 seconds and goes fullscreen with any click.</p><p>This is the first of several coding engines I will create (with major help from Chat GPT) to lower the access barrier to creative coding, digital writing, and electronic literature. To use it, you can save this file and open it with a text/code editor or download it <a href="https://drive.google.com/drive/folders/1SYFhkO1nzg5RjVnknMKt5TNqIH7AOEam?usp=sharing">here</a>. And because it is licensed with the MIT license, you already have my permission to use it and modify it as you see fit. I hope you find it useful!
+				</p> 
+            </div>
+        </div>
+    <script> /* In the var immediately below, copy-paste your Tracery/CBDQ JSON between the {} brackets */
+    var obj = {
+    "origin": [
+    "In order to #topic# effectively, we need to #sentance#.",
+    "#topic#ing the #topic# could lead to #sentance#.", 
+    "The key to #topic# is #sentance#.",
+    "We should prioritize #topic#ing our #topic#.",
+    "#topic# is essential for #sentance#.",
+    "Without #topic#, we risk #sentance#.",
+    "#topic# will be crucial as we #sentance#.",
+    "By #topic#ing, we can #sentance#.",
+    "To #topic#, we first must #sentance#.",
+    "#topic# is the cornerstone of #sentance#.",
+    "Focusing on #topic# will enable #sentance#.",
+    "#topic# is a key driver of #sentance#.",
+    "We can't #topic# without #sentance#.",
+    "#topic#ing will fundamentally change #sentance#.",
+    "The future of #topic# depends on #sentance#."
+    ],
+    "topic": [
+  "Actionable",
+  "Agile",
+  "Bandwidth",
+  "Blockchain", 
+  "Boil",
+  "Brainstorm",
+  "Deliverable",
+  "Disrupt",
+  "Drill",
+  "Empower",
+  "Engagement",
+  "Gamification",
+  "Globalization", 
+  "Granular",
+  "Holistic",
+  "Ideate",
+  "Innovate",
+  "Iterate",
+  "Leverage",
+  "Mindshare",
+  "Ninja",
+  "Onboarding",
+  "Optimize",
+  "Paradigm",
+  "Pivot",
+  "Proactive",
+  "Robust",
+  "Scalable",
+  "Seamless",
+  "Siloed",
+  "Startup",
+  "Streamline",
+  "Synergy",
+  "Touchpoint", 
+  "Upskill",
+  "Viral",
+  "Workflow"
+],
+    "sentance": [
+    "Actionable",
+  "Agile",
+  "Bandwidth",
+  "Blockchain", 
+  "Boil",
+  "Brainstorm",
+  "Deliverable",
+  "Disrupt",
+  "Drill",
+  "Empower",
+  "Engagement",
+  "Gamification",
+  "Globalization", 
+  "Granular",
+  "Holistic",
+  "Ideate",
+  "Innovate",
+  "Iterate",
+  "Leverage",
+  "Mindshare",
+  "Ninja",
+  "Onboarding",
+  "Optimize",
+  "Paradigm",
+  "Pivot",
+  "Proactive",
+  "Robust",
+  "Scalable",
+  "Seamless",
+  "Siloed",
+  "Startup",
+  "Streamline",
+  "Synergy",
+  "Touchpoint", 
+  "Upskill",
+  "Viral",
+  "Workflow"
+]
+
+};
+
+function generateString(template) {
+    let placeholder = template.match(/#([^#]+)#/);
+    while (placeholder) {
+        let [fullMatch, key] = placeholder;
+        let choices = obj[key];
+        if (!choices) {
+            throw new Error(`No choices for key '${key}'`);
+        }
+        let choice = choices[Math.floor(Math.random() * choices.length)];
+        template = template.replace(fullMatch, generateString(choice));
+        placeholder = template.match(/#([^#]+)#/);
+    }
+    return template;
+}
+
+function displayString() {
+    var randomIndex = Math.floor(Math.random() * obj.origin.length);
+    document.getElementById('text-container').innerHTML = generateString(obj.origin[randomIndex]);
+}
+
+    displayString();  // call once at the beginning
+    setInterval(displayString, 30000);  // call every 30 seconds
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            // Function to display the about modal
+            function displayAbout() {
+                modal.style.display = "block";
+            }
+		    function goFullscreen() {
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+            document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+            document.documentElement.msRequestFullscreen();
+        }
+    }
+
+    document.onclick = goFullscreen;
+</script>
+</body>
+</html>
