@@ -1,0 +1,64 @@
+/* Define the body styles */
+body {
+    background-color: #808080; /* Mid-tone gray background */
+    color: #FFFFFF; /* White font color for contrast */
+    font-family: Arial, Helvetica, sans-serif; /* Font type */
+    margin: 0;
+    padding: 0;
+}
+
+/* Define the link styles */
+a:link {
+    color: #800020; /* Burgundy for unvisited links */
+    text-decoration: none; /* Remove underline */
+}
+
+a:visited {
+    color: #800020; /* Burgundy for visited links */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    color: #FF6347; /* Tomato color for hover effect */
+    text-decoration: underline; /* Underline on hover */
+}
+
+a:active {
+    color: #FF4500; /* OrangeRed color for active links */
+    text-decoration: underline; /* Underline on active */
+}
+
+/* Define styles for headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF; /* White font color for headings */
+}
+
+/* Define styles for paragraphs */
+p {
+    color: #FFFFFF; /* White font color for paragraphs */
+}
+
+/* Define styles for other common elements */
+header, footer {
+    background-color: #666666; /* Darker gray for header and footer */
+    color: #FFFFFF; /* White font color */
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #555555; /* Slightly darker gray for navigation */
+    color: #FFFFFF; /* White font color */
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #FFFFFF; /* White font color for nav links */
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #FF6347; /* Tomato color for hover effect on nav links */
+}
