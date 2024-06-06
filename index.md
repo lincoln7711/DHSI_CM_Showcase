@@ -6,7 +6,7 @@ Hello! I'm Andrew, a passionate instructional designer with a keen interest in c
 
 ## Projects
 
-- [Grids & Gestures]()
+- [Grids & Gestures](#)
 - [Physical Hypertext](./PXL_20240604_173207951.jpg)
 - [Twine](./Pomeroy%20Marker%20Project%20-%20DHSI%20Limited%20Subset.html)
 - [Bitsy](./sample_game(1).html)
